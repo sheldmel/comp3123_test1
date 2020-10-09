@@ -1,0 +1,23 @@
+
+<script>
+function lowerCaseWords(array){
+  filteredArray = array.filter(x => typeof x === "string");
+  var finalArray = filteredArray.map(v => v.toLowerCase());
+  return new Promise(function(resolve,reject){ 
+    if(finalArray != undefined){
+      console.log(finalArray)
+      resolve("function worked")
+    }
+    else{
+      reject(Error("Function didnt work"));
+    }
+  })
+}
+
+const mixedArray = ['PIZZA', 10 , true , 25 , false , "wings"]
+
+lowerCaseWords(mixedArray)
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
+
+</script>
